@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="已验证的 iPhone 快捷指令测试文件下载页">
+    <title>iPhone 快捷指令测试下载</title>
+    <style>
+      :root {
+        color: #1d1d1f;
+        background: #f5f5f7;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 28px 18px calc(28px + env(safe-area-inset-bottom));
+      }
+      main {
+        width: min(100%, 460px);
+        padding: 30px 24px 24px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .06);
+        border-radius: 28px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .08);
+      }
+      .icon {
+        display: grid;
+        place-items: center;
+        width: 58px;
+        height: 58px;
+        margin-bottom: 22px;
+        border-radius: 16px;
+        background: #ffd60a;
+        font-size: 30px;
+      }
+      h1 { margin: 0 0 10px; font-size: 28px; line-height: 1.2; }
+      .lead { margin: 0 0 24px; color: #6e6e73; line-height: 1.55; }
+      .file {
+        padding: 16px;
+        margin-bottom: 18px;
+        border-radius: 16px;
+        background: #f5f5f7;
+      }
+      .file strong { display: block; margin-bottom: 6px; overflow-wrap: anywhere; }
+      .file span { color: #6e6e73; font-size: 14px; }
+      .download {
+        display: block;
+        width: 100%;
+        padding: 16px 18px;
+        border-radius: 14px;
+        background: #007aff;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 650;
+        text-align: center;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .download:active { background: #0062cc; transform: scale(.99); }
+      ol { margin: 24px 0 0; padding-left: 22px; color: #3a3a3c; line-height: 1.65; }
+      .notice {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid #e5e5ea;
+        color: #8e8e93;
+        font-size: 12px;
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="icon" aria-hidden="true">☺</div>
+      <h1>快捷指令测试下载</h1>
+      <p class="lead">这是公开测试页面。文件已完成签名和电脑端完整性核验。</p>
+      <div class="file">
+        <strong>STG-SMOKE-001.shortcut</strong>
+        <span>21,911 字节 · G1 测试文件</span>
+      </div>
+      <a class="download" href="./STG-SMOKE-001.shortcut" download>下载快捷指令</a>
+      <ol>
+        <li>点击蓝色按钮下载。</li>
+        <li>在 iPhone“文件”中点开下载的 .shortcut 文件。</li>
+        <li>交给“快捷指令”添加并手动运行。</li>
+      </ol>
+      <div class="notice">
+        预期弹窗：STG-SMOKE-001<br>
+        SHA-256：C7D5BC070BF5FDB51DA9158B650FF5F65B187A988BCD81B9C86EE094D1DA454C
+      </div>
+    </main>
+  </body>
+</html>
