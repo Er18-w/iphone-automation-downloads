@@ -1,62 +1,107 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="color-scheme" content="light">
-  <meta name="description" content="已验证的 iPhone 快捷指令测试文件下载页">
-  <title>iPhone 快捷指令测试下载</title>
-  <style>
-    :root { color: #1d1d1f; background: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 28px 18px calc(28px + env(safe-area-inset-bottom)); }
-    main { width: min(100%, 520px); padding: 30px 24px 24px; background: #fff; border: 1px solid rgba(0, 0, 0, .06); border-radius: 28px; box-shadow: 0 18px 50px rgba(0, 0, 0, .08); }
-    .icon { display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 22px; border-radius: 16px; background: #ffd60a; font-size: 30px; }
-    h1 { margin: 0 0 10px; font-size: 28px; line-height: 1.2; }
-    h2 { margin: 28px 0 12px; font-size: 20px; }
-    .lead { margin: 0 0 22px; color: #6e6e73; line-height: 1.55; }
-    .card { padding: 16px; margin-bottom: 14px; border-radius: 18px; background: #f5f5f7; }
-    .card strong { display: block; margin-bottom: 6px; overflow-wrap: anywhere; }
-    .meta { display: block; margin-bottom: 13px; color: #6e6e73; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
-    .download { display: block; width: 100%; padding: 13px 16px; border-radius: 12px; background: #007aff; color: #fff; font-size: 17px; font-weight: 650; text-align: center; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-    .download:active { background: #0062cc; transform: scale(.99); }
-    ol { margin: 12px 0 0; padding-left: 22px; color: #3a3a3c; line-height: 1.7; }
-    .notice { margin-top: 22px; padding-top: 18px; border-top: 1px solid #e5e5ea; color: #8e8e93; font-size: 12px; line-height: 1.55; }
-  </style>
-</head>
-<body>
-  <main>
-    <div class="icon" aria-hidden="true">☺</div>
-    <h1>快捷指令测试库</h1>
-    <p class="lead">文件已完成 Cherri 编译、HubSign 签名和电脑端完整性核验。请按下面顺序完成 G2 测试。</p>
-
-    <h2>G2：日期流程新建与修改</h2>
-    <div class="card">
-      <strong>1. STG-G2-DATE-V1.shortcut</strong>
-      <span class="meta">22,296 字节 · 预期前缀“当前时间：”<br>SHA-256：8D8279D30BCDD10AF84D66E18885CBC80A1E6A2368C474FDB0266D18B2892291</span>
-      <a class="download" href="./STG-G2-DATE-V1.shortcut" download>下载 V1</a>
-    </div>
-    <div class="card">
-      <strong>2. STG-G2-DATE-V2.shortcut</strong>
-      <span class="meta">22,308 字节 · 预期前缀“现在是：”<br>SHA-256：A5A89DF376FCDFF22B042CC83038484F34CF226A65606F3B280F49E2B56EDEEF</span>
-      <a class="download" href="./STG-G2-DATE-V2.shortcut" download>下载 V2</a>
-    </div>
-
-    <h2>手机测试顺序</h2>
-    <ol>
-      <li>下载并添加 V1，运行后确认显示“当前时间：”和当前日期时间。</li>
-      <li>下载并添加 V2，运行后确认前缀变为“现在是：”，日期显示为中文格式。</li>
-      <li>再次下载或打开 V1，确认可以恢复 V1 行为。</li>
-    </ol>
-
-    <h2>已通过的 G1 固定测试</h2>
-    <div class="card">
-      <strong>STG-SMOKE-001.shortcut</strong>
-      <span class="meta">21,911 字节 · 预期弹窗“STG-SMOKE-001”<br>SHA-256：C7D5BC070BF5FDB51DA9158B650FF5F65B187A988BCD81B9C86EE094D1DA454C</span>
-      <a class="download" href="./STG-SMOKE-001.shortcut" download>下载 G1 测试文件</a>
-    </div>
-
-    <div class="notice">这是公开测试页，不包含账号、密钥或个人数据。iPhone 添加快捷指令时仍需用户确认。</div>
-  </main>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="个人使用的 iPhone 快捷指令测试下载页">
+    <title>我的快捷指令测试库</title>
+    <style>
+      :root {
+        color: #1d1d1f;
+        background: #f5f5f7;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 28px 18px calc(28px + env(safe-area-inset-bottom));
+      }
+      main {
+        width: min(100%, 460px);
+        padding: 30px 24px 24px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .06);
+        border-radius: 28px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, .08);
+      }
+      .icon {
+        display: grid;
+        place-items: center;
+        width: 58px;
+        height: 58px;
+        margin-bottom: 22px;
+        border-radius: 16px;
+        background: #ffd60a;
+        font-size: 30px;
+      }
+      h1 { margin: 0 0 10px; font-size: 28px; line-height: 1.2; }
+      .lead { margin: 0 0 24px; color: #6e6e73; line-height: 1.55; }
+      .file {
+        padding: 16px;
+        margin-bottom: 18px;
+        border-radius: 16px;
+        background: #f5f5f7;
+      }
+      .file strong { display: block; margin-bottom: 6px; overflow-wrap: anywhere; }
+      .file span { color: #6e6e73; font-size: 14px; }
+      .download {
+        display: block;
+        width: 100%;
+        padding: 16px 18px;
+        border-radius: 14px;
+        background: #007aff;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 650;
+        text-align: center;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .download:active { background: #0062cc; transform: scale(.99); }
+      .secondary {
+        display: block;
+        margin-top: 12px;
+        color: #007aff;
+        text-align: center;
+        text-decoration: none;
+      }
+      ol { margin: 24px 0 0; padding-left: 22px; color: #3a3a3c; line-height: 1.65; }
+      .notice {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid #e5e5ea;
+        color: #8e8e93;
+        font-size: 12px;
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="icon" aria-hidden="true">☺</div>
+      <h1>快速记录灵感</h1>
+      <p class="lead">这是手机实测版。它会先让你确认内容，再由你选择《AI 收集箱》并追加记录。</p>
+      <div class="file">
+        <strong>AI-Inbox-V0.shortcut</strong>
+        <span>22,841 字节 · 已签名 · 等待 iPhone 写入验证</span>
+      </div>
+      <a class="download" href="./AI-Inbox-V0.shortcut" download>下载“快速记录灵感”</a>
+      <a class="secondary" href="./STG-SMOKE-001.shortcut" download>下载旧的弹窗测试文件</a>
+      <ol>
+        <li>点击蓝色按钮，在 iPhone 上添加快捷指令。</li>
+        <li>输入测试内容并确认保存。</li>
+        <li>出现备忘录选择时，选择《AI 收集箱》。</li>
+        <li>第一次运行若询问备忘录权限，由你决定是否允许。</li>
+      </ol>
+      <div class="notice">
+        只会追加，不会删除或覆盖笔记。取消确认或不输入内容时不应写入。<br>
+        SHA-256：700F50D4CABB970631E39901998E43822EB1CFE1D4901EAAAB82FC49210F94DB
+      </div>
+    </main>
+  </body>
 </html>
